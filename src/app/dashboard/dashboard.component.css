@@ -1,0 +1,82 @@
+.main-content{
+    position:absolute;
+    margin:0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65%;
+}
+.icon-pluus{
+    color: #ffffff;
+    font-size: 10px;
+}
+.add-btn{
+    color: #ffffff;
+    background-color: #ff6b81;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 4px;
+    box-shadow: 1px 0px 3px 0 rgb(0 0 0 / 20%), 0 2px 4px 0 rgb(0 0 0 / 20%);
+}
+.bradius{
+    border-radius: 0!important;
+    color: #495057;
+}
+.bradius:focus{
+    border: 1px solid #495057;
+    box-shadow: none;
+}
+.srch-icon{
+    color: #ffffff;
+}
+.srch-btn, .srch-btn:active{
+    background-color: #ff6b81!important;
+    border:none;
+    box-shadow: none!important;
+}
+#form1{
+    padding: 20px 60px;
+}
+.dwnlod{
+    background: url('../../assets/download-button.svg');
+    height: 20px;
+    width: 20px;
+    display: block;
+    margin-top: 4px;
+}
+.btn-clr{
+    color: #ff6b81;
+    font-size: 20px;
+    margin:0px 15px;
+}
+tr,th,td{
+    border: 2px solid #dee2e6;
+}
+tr td:last-child{
+    border: none;
+}
+th{
+    background-color: lightgray;
+}
+::ng-deep .pagination{
+    justify-content: center;
+}
+::ng-deep .page-item.active .page-link {
+    background-color: #ff6b81;
+    border-color: #ff6b81;
+}
+::ng-deep .page-link {
+    color: #ff6b81;
+}
+::ng-deep .page-link:hover{
+    color: #ff6b81;
+}
+::ng-deep .page-link:focus{
+    box-shadow: none;
+}
+::ng-deep .pagination li:last-child{
+    margin-left: 3rem;
+}
+::ng-deep .pagination li:first-child{
+    margin-right: 3rem;
+}

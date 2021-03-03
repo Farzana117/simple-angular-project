@@ -1,0 +1,48 @@
+<div class="main-content">
+    <div  class="d-flex justify-content-center m-4">
+        <button class="add-btn" (click)="addPatient()">
+            ADD NEW PATIENT <fa name="plus" class="icon-pluus"></fa>
+        </button>
+    </div>
+    <div class="input-group d-flex justify-content-center">
+        <div class="form-outline">
+          <input type="search" id="form1" class="form-control bradius" placeholder="TYPE PATIENT ID" [(ngModel)]="searchPatient" (keyup)="showAllData()" />
+        </div>
+        <button type="button" class="btn btn-primary bradius srch-btn" (click)="searchPatients(searchPatient)">
+          <fa name="search" class="srch-icon"></fa>
+        </button>
+    </div>
+    <div class="d-flex justify-content-center m-4">
+        <table class="table table-bordered">
+            <thead>
+              <tr class="text-center">
+                <th scope="col">PATIENT ID</th>
+                <th scope="col">SCAN DATE</th>
+                <th scope="col">REPORT STATUS <fa name="filter"></fa></th>
+                <th scope="col">ACTIONS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngIf="!noData">
+                <tr *ngFor="let patient of patients| slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+                  <td class="text-center">{{patient.id}}</td>
+                  <td class="text-center">{{patient.date}}</td>
+                  <td class="text-center">{{patient.status}}</td>
+                  <td class="d-flex justify-content-center">
+                      <span><fa name="cloud-download" class="btn-clr"></fa></span>
+                      <span class="{{patient.actions}}"></span>
+                      <span><fa name="plus-circle" class="btn-clr"></fa></span>
+                  </td>
+                </tr>
+              </ng-container>
+              <tr *ngIf="noData" class="text-center">
+               <td colspan="4"> <h3>No Record Found!!!!</h3></td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="!hidePagination">
+    <ngb-pagination [collectionSize]="total" [pageSize]="pageSize" [(page)]="page"
+     [maxSize]="5" [rotate]="true" [boundaryLinks]="true" [ellipses]="false" size="sm"></ngb-pagination>
+    </div>
+</div>
